@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="aeropuertoturiki.App">
+    <Application.Resources>
+        <Style TargetType="Button">
+            <Setter Property="WidthRequest" Value="70"></Setter>
+            <Setter Property="HeightRequest" Value="70"></Setter>
+            <Setter Property="CornerRadius" Value="35"></Setter>
+            <Setter Property="HorizontalOptions" Value="CenterAndExpand"></Setter>
+            <Setter Property="BackgroundColor" Value="#0c32ae"></Setter>
+        </Style>
+        <Style TargetType="ImageButton">
+            <Setter Property="WidthRequest" Value="70"></Setter>
+            <Setter Property="HeightRequest" Value="70"></Setter>
+            <Setter Property="CornerRadius" Value="35"></Setter>
+            <Setter Property="HorizontalOptions" Value="CenterAndExpand"></Setter>
+            <Setter Property="BackgroundColor" Value="#0c32ae"></Setter>
+        </Style>
+        <Style TargetType="Label">
+            <Setter Property="TextColor" Value="White"></Setter>
+            <Setter Property="FontFamily" Value="PoppinsRegular"></Setter>
+        </Style>
+        <Style TargetType="Entry">
+            <Setter Property="TextColor" Value="White"></Setter>
+            <Setter Property="FontFamily" Value="PoppinsRegular"></Setter>
+        </Style>
+    </Application.Resources>
+</Application>

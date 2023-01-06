@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="aeropuertoturiki.Views.VerDetallesView">
+
+
+    <StackLayout>
+        <StackLayout.Background>
+            <LinearGradientBrush EndPoint="0,1">
+                <GradientStop Color="#0c32af" Offset="0.1"></GradientStop>
+                <GradientStop Color="White" Offset="1.0"></GradientStop>
+            </LinearGradientBrush>
+        </StackLayout.Background>
+        <StackLayout Margin="10,75,10,0">
+            <Label FontFamily="PoppinsBold"
+               FontSize="50"
+               HorizontalOptions="StartAndExpand"
+               Margin="0,30,0,0">Detalles de vuelo</Label>
+
+            <Frame 
+                   BackgroundColor="#ddeff9"
+                   HasShadow="True"
+                   CornerRadius="35"
+                  Grid.Column="1">
+                <StackLayout>
+                    <Label TextColor="Black"
+                           FontSize="35"
+                           FontFamily="PoppinsBold">CM 803</Label>
+                    <Grid Margin="0">
+                        <Grid.Resources>
+                            <Style TargetType="Label" x:Key="infotext">
+                                <Setter Property="TextColor" Value="Black"></Setter>
+                                <Setter Property="HorizontalTextAlignment" Value="Center"></Setter>
+                                <Setter Property="HorizontalOptions" Value="CenterAndExpand"></Setter>
+                                <Setter Property="FontSize" Value="15"></Setter>
+                            </Style>
+                        </Grid.Resources>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <StackLayout >
+                            <Label Style="{StaticResource infotext}">Hora</Label>
+                            <Label Style="{StaticResource infotext}">09:50</Label>
+                            <Label Style="{StaticResource infotext}">CTM</Label>
+                        </StackLayout>
+                        <StackLayout Grid.Column="1">
+                            <Label Style="{StaticResource infotext}">Procedencia</Label>
+                            <Image Source="avi" 
+                                   WidthRequest="100"
+                                   HeightRequest="25"
+                                   HorizontalOptions="Center"></Image>
+                            <Label Style="{StaticResource infotext}"
+                                   FontFamily="PoppinsBold">Allende
+                            </Label>
+                        </StackLayout>
+                        <StackLayout Grid.Column="2">
+                            <Label Style="{StaticResource infotext}"
+                                   Margin="0,-23,0,0">Hora de llegada</Label>
+                            <Label Style="{StaticResource infotext}"
+                                   Margin="0,-2,0,0">12:00</Label>
+                            <Label Style="{StaticResource infotext}">CTU</Label>
+                        </StackLayout>
+
+                    </Grid>
+                    <StackLayout>
+                        <Label TextColor="Black"
+                           FontSize="25"
+                           >Observaciones</Label>
+                        <Frame BackgroundColor="#e85224"
+                               CornerRadius="35"
+                               HasShadow="True">
+                            <Label TextColor="White"
+                           FontSize="25"
+                           HorizontalTextAlignment="Center"
+                           Padding="0"
+                           FontFamily="PoppinsBold"
+                           >A TIEMPO</Label>
+                        </Frame>
+                    </StackLayout>
+                </StackLayout>
+            </Frame>
+
+        </StackLayout>
+        <Button Text="&#x2713;"
+                    FontFamily="PoppinsBold"
+                    FontSize="25"
+                    Padding="0,15,0,20"
+                    Margin="0,95,0,0">
+        </Button>
+    </StackLayout>
+</ContentPage>

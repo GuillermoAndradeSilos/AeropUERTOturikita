@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:mvvm="clr-namespace:aeropuertoturiki.ViewModels"
+             x:Class="aeropuertoturiki.Views.EditarView">
+    <StackLayout>
+        <StackLayout.Background>
+            <LinearGradientBrush EndPoint="0,1">
+                <GradientStop Color="#0c32af" Offset="0.1"></GradientStop>
+                <GradientStop Color="White" Offset="1.0"></GradientStop>
+            </LinearGradientBrush>
+        </StackLayout.Background>
+        <StackLayout Margin="55,75,55,0">
+            <Label FontSize="31" 
+                   LineBreakMode="WordWrap"
+                   FontFamily="PoppinsBold"
+                   >Edita el vuelo</Label>
+
+            <StackLayout Margin="5,30,5,0" HorizontalOptions="FillAndExpand">
+                <Label>Hora</Label>
+                <TimePicker x:Name="Hora" Time="{Binding Hora}"></TimePicker>
+                <Label>Procedencia</Label>
+                <Entry x:Name="Salida" Text="{Binding Salida}"></Entry>
+                <Label>No de Vuelo</Label>
+                <Entry x:Name="CodigoVuelo" Text="{Binding CodigoVuelo}"></Entry>
+                <Label>Hora estimada</Label>
+                <TimePicker x:Name="HoraLlegada" Time="{Binding HoraLlegada}"></TimePicker>
+                <Label>Observaciones</Label>
+                <Picker x:Name="Estado" ItemsSource="{Binding Estados}" ItemDisplayBinding="{Binding Estado1}" SelectedIndex="0" Title="Estado1"
+                    SelectedItem="{Binding EstadoSeleccionado,Mode=TwoWay}">
+                    <Picker.BindingContext>
+                        <mvvm:PrincipalViewModel></mvvm:PrincipalViewModel>
+                    </Picker.BindingContext>
+                </Picker>
+                <Label Text="{Binding Error}">
+                    <Label.BindingContext>
+                        <mvvm:PrincipalViewModel></mvvm:PrincipalViewModel>
+                    </Label.BindingContext>
+                </Label>
+                <Label x:Name="Id" Text="{Binding IdVuelo}" IsVisible="false"></Label>
+            </StackLayout>
+        </StackLayout>
+
+
+        <StackLayout Orientation="Horizontal"
+                     HorizontalOptions="Center"
+                     Padding="0" 
+                     Margin="0,0,0,0">
+            <Button Clicked="Button_Clicked" 
+                    Text="	&#215;" 
+                    Padding="0,0,10,0" 
+                    Margin="0,95,100,0" 
+                    FontSize="45" TextColor="White"
+                    FontAttributes="Bold"></Button>
+            <Button Text="&#x2713;" 
+                    FontFamily="PoppinsBold" 
+                    Clicked="Button_Clicked_1"
+                    FontSize="25" TextColor="White"
+                    Padding="0,15,0,20" 
+                    Margin="0,95,0,0">
+                <Button.BindingContext>
+                    <mvvm:PrincipalViewModel></mvvm:PrincipalViewModel>
+                </Button.BindingContext>
+            </Button>
+        </StackLayout>
+    </StackLayout>
+</ContentPage>
